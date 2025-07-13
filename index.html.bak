@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PlayGems</title>
+    <link rel="icon" type="image/x-icon" href="assets/faviconn.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <style>
+        #snowfall-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 0%;
+            pointer-events: none;
+            z-index: 0; 
+        }
+        /* Стили для полоски прогресса */
+        #progress-bar {
+            width: 80%;
+            height: 20px;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        #progress-bar-fill {
+            height: 100%;
+            background-color: #ff3860;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        /* Анимация текста */
+        @keyframes celebrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .celebrate-text {
+            animation: celebrate 1s infinite;
+            color: #ff3860;
+            font-weight: bold;
+        }       
+    </style>
+</head>
+<body>
+    <canvas id="snowfall-canvas"></canvas>
+
+    <nav class="navbar level" role="navigation" aria-label="main navigation">
+        <div class="navbar-left">
+            <a class="navbar-item" href="https://steelbrawl.ru/">
+                <img src="assets/logo.jpg" class="is-32x32" alt="Steel Brawl">
+                <strong class="ml-3">PlayGems</strong>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <a class="navbar-item" href="https://t.me/+e5VY9Izi841kZTEy" target="_blank">
+                <i class="fa-brands fa-telegram fa-2x" aria-hidden="true"></i>
+                <strong class="ml-2">НАШ TGK</strong>
+            </a>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title is-1">PlayGems</h1>
+            <p class="subtitle is-3">PlayGems - это МаркетПлейс с многими товарами как - "Poblox - Brawl Stars - Telegram" Успей купить товар пока скидки не были убраны!😀 <strong class="has-text-danger">Brawl Stars</strong></p>
+            <a class="button is-danger is-large is-rounded is-outlined" href="https://steelbrawl.ru/ru/download/">Наш Тгк</a>
+            <a class="button is-danger is-large is-rounded is-outlined" href="https://steelbrawl.ru/ru/OBT/">ОБТ</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title"><i class="fa-solid fa-heart-circle-check has-text-danger"></i> <span id="percentvalue">0</span>% Процентов Покупателей-Продавцов Выбирают нас!😀</h2>
+            <progress id="prbar" class="progress is-danger" max="70">
+                97.9%
+            </progress>
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Продаж</p>
+                        <p class="title">300+</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Ежедневный онлайн</p>
+                        <p class="title">200+</p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">О нас</h2>
+            <div class="box">
+                Мы хороший маркет плейс с многими товарами наподобий как " Brawl Stars - Roblox - Steam - Dota2 - Telegram" - в крайне обмана - или тд , мы можете обратится в нашу онлаин поддержку. Мы Работает 24/7 Так что вы можете не волноваться за ваши средства!
+            </div>
+        </div>
+    </section>
+
+    <canvas id="snowfall-canvas"></canvas>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">Поддержка в случае скама/проблемы.</h2>
+            <div class="columns is-multiline is-centered">
+                <div class="column is-4">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">Поддержка PlayGems</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <img src="assets/dark.jpg" alt="Поддержка PlayGems" style="width: 100px; height: 100px;">
+                                <p> </p>
+                                <pre>
+1. Поможем если вас
+заскамили - или же
+с другими вопросами
+2. Случай с вашей
+стороны скама будет
+бан навсегда или
+- же временно❗️
+3. Мы Работаем 24/7 🎰
+                                    </pre>
+                                <a class="button is-dark is-rounded" href="https://steelbrawl.ru/dark/">Поддержка</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                </div>
+            </div>
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">Brawl Stars - Roblox - Telegram</h2>
+            <div class="columns is-multiline is-centered">
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">30 гемов</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 200₽</p>
+                                <p>Нажмите, чтобы купить</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">80 гемов</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 40₽</p>
+                                <p>Нажмите, чтобы купить</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">Тг Аккаунт +1 Новорег</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 40₽</p>
+                                <p>Описания: Аккаунт Телеграм Новорег возврат производится в течение 24 часов если в случии. ВЫЛЕТА-ЗАМОРОЖЕНИЯ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">170 гемов</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 100₽</p>
+                                <p>Нажмите, чтобы купить</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">360 гемов</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 200₽</p>
+                                <p>Нажмите, чтобы купить</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">950 гемов</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 300₽</p>
+                                <p>Нажмите, чтобы купить</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4" onclick="window.location.href='https://t.me/well0ff'">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">2000 гемов</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Цена:</strong> 500₽</p>
+                                <p>Нажмите, чтобы купить</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="title is-5">Также вы можете купить VIP, 70₽/месяц </p>
+            <p>Чтобы купить VIP, напишите мне <a href="https://t.me/well0ff" class="has-text-info" target="_blank">@well0ff</a> в Telegram.</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>SteelTeam RU &copy; 2025</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/43e816a2c1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Установите дату окончания отсчета
+        const countDownDate = new Date("April 5, 2025 12:00:00").getTime();
+
+        // Получите элементы DOM
+        const daysElement = document.getElementById("days");
+        const hoursElement = document.getElementById("hours");
+        const minutesElement = document.getElementById("minutes");
+        const secondsElement = document.getElementById("seconds");
+        const progressBarFill = document.getElementById("progress-bar-fill");
+        const celebrationMessage = document.getElementById("celebration-message");
+
+        // Общее время до события (в миллисекундах)
+        const totalTime = countDownDate - new Date().getTime();
+
+        // Обновляйте отсчет каждую секунду
+        const x = setInterval(function() {
+            // Получите текущую дату и время
+            const now = new Date().getTime();
+
+            // Найдите разницу между текущей датой и датой окончания
+            const distance = countDownDate - now;
+
+            // Вычислите дни, часы, минуты и секунды
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Обновите текст отсчета
+            daysElement.innerHTML = days;
+            hoursElement.innerHTML = hours;
+            minutesElement.innerHTML = minutes;
+            secondsElement.innerHTML = seconds;
+
+            // Обновите полоску прогресса
+            const progress = (distance / totalTime) * 100; // Процент оставшегося времени
+            progressBarFill.style.width = `${progress}%`;
+
+            // Если отсчет завершен
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").classList.add("is-hidden"); // Скрыть таймер
+                celebrationMessage.classList.remove("is-hidden"); // Показать сообщение
+
+                // Запустить конфетти
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+
+                // Повторять конфетти каждые 500 мс
+                const interval = setInterval(() => {
+                    confetti({
+                        particleCount: 50,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                }, 500);
+
+                // Остановить конфетти через 5 секунд
+                setTimeout(() => {
+                    clearInterval(interval);
+                }, 5000);
+            }
+        }, 1000);        
+        var num = 0;
+        function editPercetageValues() {
+            if (num !== 98) {
+                num += 1;
+            }
+            document.getElementById("prbar").value = num;
+            document.getElementById("percentvalue").innerHTML = num;
+        }
+        setInterval(editPercetageValues, 10)
+    </script>
+    <script>
+        const canvas = document.getElementById("snowfall-canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initSnowflakes();
+        });
+
+        const snowflakes = [];
+        const snowflakeCount = 111; 
+
+        function createSnowflake() {
+            return {
+                x: Math.random() * canvas.width, 
+                y: Math.random() * canvas.height, 
+                radius: Math.random() * 4 + 1, 
+                speedX: Math.random() * 2 - 1, 
+                speedY: Math.random() * 1 + 0.5
+            };
+        }
+
+        function initSnowflakes() {
+            snowflakes.length = 0;
+            for (let i = 0; i < snowflakeCount; i++) {
+                snowflakes.push(createSnowflake());
+            }
+        }
+
+        function updateSnowflakes() {
+            for (let flake of snowflakes) {
+                flake.x += flake.speedX;
+                flake.y += flake.speedY;
+
+                if (flake.y > canvas.height) {
+                    flake.y = -flake.radius;
+                    flake.x = Math.random() * canvas.width;
+                }
+
+                if (flake.x > canvas.width) {
+                    flake.x = -flake.radius;
+                }
+
+                if (flake.x < -flake.radius) {
+                    flake.x = canvas.width + flake.radius;
+                }
+            }
+        }
+
+        function drawSnowflakes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+            ctx.beginPath();
+
+            for (let flake of snowflakes) {
+                ctx.moveTo(flake.x, flake.y);
+                ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+            }
+
+            ctx.fill();
+        }
+
+        function animate() {
+            updateSnowflakes();
+            drawSnowflakes();
+            requestAnimationFrame(animate);
+        }
+
+        initSnowflakes();
+        animate();
+
+    </script>
+
+</body>
+
+</html>
